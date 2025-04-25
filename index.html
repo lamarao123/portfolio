@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft Brasil | Criação de Sites e Landing Pages Profissionais</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #121212;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #FF6B35;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #E85A2A;
+        }
+        
+        /* Header */
+        header {
+            background-color: #000;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #FF6B35;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #FF6B35;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #FF6B35;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Serviços */
+        .services {
+            padding: 80px 0;
+            background-color: #121212;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            color: #FF6B35;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        /* Preços */
+        .pricing {
+            padding: 80px 0;
+            background-color: #0a0a0a;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured {
+            background-color: #2a2a2a;
+            border: 2px solid #FF6B35;
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FF6B35;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .features {
+            margin: 30px 0;
+        }
+        
+        .features li {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        /* Contato */
+        .contact {
+            padding: 80px 0;
+            background-color: #121212;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    
+                    
+                    <div class="logo">Web<span>ED</span></div>
+
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+   
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+       
+        <div class="container">
+          
+            <h1>Websites e Landing Pages que Vendem</h1>
+            <p>Aumente suas vendas com páginas profissionais, otimizadas e focadas em conversão.</p>
+            <a href="#contact" class="btn">Solicite um Orçamento</a>
+          
+        </div>
+    </section>
+   
+   
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Sites Institucionais</h3>
+                    <p>Sites profissionais para estabelecer sua presença online.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas de alta conversão focadas em resultados.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛍️</div>
+                    <h3>E-commerce</h3>
+                    <p>Lojas virtuais completas para vender pela internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planos e Preços</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price">R$997<span>/único</span></div>
+                    <ul class="features">
+                        <li>Design Profissional</li>
+                        <li>Página de Alta Conversão</li>
+                        <li>Otimização para Mobile</li>
+                        <li>Entrega em 7 dias</li>
+                    </ul>
+                    <a href="#contact" class="btn">Começar Agora</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Site Institucional</h3>
+                    <div class="price">R$1.997<span>/único</span></div>
+                    <ul class="features">
+                        <li>Até 5 Páginas</li>
+                        <li>Design Profissional</li>
+                        <li>Totalmente Responsivo</li>
+                        <li>Otimização para SEO</li>
+                        <li>Entrega em 15 dias</li>
+                    </ul>
+                    <a href="#contact" class="btn">Começar Agora</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>E-commerce</h3>
+                    <div class="price">R$3.997<span>/único</span></div>
+                    <ul class="features">
+                        <li>Loja Virtual Completa</li>
+                        <li>Até 50 Produtos</li>
+                        <li>Integração com Pagamentos</li>
+                        <li>Painel Administrativo</li>
+                        <li>Entrega em 30 dias</li>
+                    </ul>
+                    <a href="#contact" class="btn">Começar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="E-mail">
+                    <input type="tel" placeholder="Telefone">
+                    <textarea placeholder="Mensagem"></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Web<span>ED</span></div>
+            <p>Especialistas em criar sites e landing pages que convertem visitantes em clientes.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WebED Brasil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
