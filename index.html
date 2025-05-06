@@ -12,19 +12,19 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             line-height: 1.6;
             color: #e0e0e0;
             background-color: #121212;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: #FF6B35;
@@ -36,11 +36,11 @@
             transition: background-color 0.3s;
             margin-top: 20px;
         }
-        
+
         .btn:hover {
             background-color: #E85A2A;
         }
-        
+
         /* Header */
         header {
             background-color: #000;
@@ -51,92 +51,105 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .profile-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 2px solid #FF6B35;
-        }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
         }
-        
+
         .logo span {
             color: #FF6B35;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 30px;
         }
-        
+
         nav ul li a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: #FF6B35;
         }
-        
+
+        .menu-toggle {
+            display: none; /* Oculto em telas maiores */
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
+            padding: 120px 0 100px; /* Ajustei o padding superior para considerar o header fixo */
             background-color: #000;
             color: white;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            text-align: center; /* Centraliza o texto dentro do hero-content */
         }
-        
-        .hero h1 {
+
+        .hero-image {
+            width: auto;
+            max-width: 300px;
+            margin-right: 50px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px; /* Adicionei um pequeno arredondamento */
+        }
+
+        .hero-content {
+            width: 70%;
+        }
+
+        .hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        
-        .hero p {
+
+        .hero-content p {
             font-size: 20px;
             max-width: 800px;
             margin: 0 auto 30px;
         }
-        
+
         /* Serviços */
         .services {
             padding: 80px 0;
             background-color: #121212;
+            text-align: center; /* Centraliza o título da seção */
         }
-        
+
         .section-title {
-            text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-title h2 {
             font-size: 36px;
             color: #fff;
             position: relative;
             padding-bottom: 20px;
+            display: inline-block; /* Para o after ficar relativo ao texto */
         }
-        
+
         .section-title h2:after {
             content: '';
             position: absolute;
@@ -147,13 +160,14 @@
             height: 4px;
             background-color: #FF6B35;
         }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mais responsivo */
             gap: 30px;
+            margin-top: 40px; /* Adicionei margem superior */
         }
-        
+
         .service-card {
             background-color: #1e1e1e;
             border-radius: 10px;
@@ -161,35 +175,36 @@
             text-align: center;
             transition: transform 0.3s;
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .service-icon {
             font-size: 50px;
             color: #FF6B35;
             margin-bottom: 20px;
         }
-        
+
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #fff;
         }
-        
+
         /* Preços */
         .pricing {
             padding: 80px 0;
             background-color: #0a0a0a;
         }
-        
+
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mais responsivo */
             gap: 30px;
+            margin-top: 40px; /* Adicionei margem superior */
         }
-        
+
         .pricing-card {
             background-color: #1e1e1e;
             border-radius: 10px;
@@ -197,43 +212,48 @@
             text-align: center;
             transition: transform 0.3s;
         }
-        
+
         .pricing-card:hover {
             transform: scale(1.05);
         }
-        
+
         .pricing-card.featured {
             background-color: #2a2a2a;
             border: 2px solid #FF6B35;
         }
-        
+
         .price {
             font-size: 48px;
             font-weight: 700;
             color: #FF6B35;
             margin: 20px 0;
         }
-        
+
         .price span {
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         .features {
             margin: 30px 0;
-        }
-        
-        .features li {
             list-style: none;
+            padding: 0;
+        }
+
+        .features li {
             margin-bottom: 15px;
         }
-        
+
         /* Contato */
         .contact {
             padding: 80px 0;
             background-color: #121212;
         }
-        
+
+        .contact-form {
+            margin-top: 30px; /* Adicionei margem superior */
+        }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -245,11 +265,11 @@
             background-color: #1e1e1e;
             color: #fff;
         }
-        
+
         .contact-form textarea {
             height: 150px;
         }
-        
+
         /* Footer */
         footer {
             background-color: #000;
@@ -257,79 +277,143 @@
             padding: 50px 0 20px;
             text-align: center;
         }
-        
+
         .footer-bottom {
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 20px;
         }
-        
+
+
+
+        .gallery {
+    padding: 60px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-grid a:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+        .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.whatsapp-button a {
+    display: block;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
         /* Responsivo */
         @media (max-width: 992px) {
-            .services-grid,
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero {
+                flex-direction: column; /* Empilha imagem e conteúdo */
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+                max-width: 250px;
+            }
+
+            .hero-content {
+                width: 90%;
             }
         }
-        
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 36px;
             }
-            
+
+            nav ul {
+                display: none; /* Oculta o menu principal */
+            }
+
+            .menu-toggle {
+                display: block; /* Exibe o menu hambúrguer */
+            }
+
+            .header-content {
+                justify-content: space-between; /* Espaço entre logo e menu toggle */
+            }
+
             .services-grid,
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
-            
-            nav ul {
-                display: none;
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .pricing-card {
+                padding: 30px 20px;
             }
         }
-
-       
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <div class="header-content">
-                <div class="logo-container">
-                    
-                    
-                    <div class="logo">Web<span>ED</span></div>
-
-                </div>
+                <div class="logo">Web<span>ED</span></div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Serviços</a></li>
-                        <li><a href="#pricing">Preços</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Preços</a></li>
+                        <li><a href="#">Contato</a></li>
                     </ul>
                 </nav>
-            </div>
-        </div>
-    </header>
-   
+                <div class="menu-toggle">☰</div> </div>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-       
-        <div class="container">
-          
-            <h1>Websites e Landing Pages que Vendem</h1>
-            <p>Aumente suas vendas com páginas profissionais, otimizadas e focadas em conversão.</p>
-            <a href="#contact" class="btn">Solicite um Orçamento</a>
-          
-        </div>
-    </section>
-   
-   
-    <!-- Serviços -->
-    <section class="services" id="services">
-        <div class="container">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="003.jpg" alt="Web-ED desenvolvimento web">
+            </div>
+            <div class="hero-content">
+                <h1>Websites e Landing Pages que Vendem</h1>
+                <p>Aumente suas vendas com páginas profissionais, otimizadas e focadas em conversão.</p>
+                <a href="#" class="btn">Solicite um Orçamento</a>
+            </div>
+        </section>
+
+        <section class="services">
             <div class="section-title">
                 <h2>Nossos Serviços</h2>
             </div>
@@ -337,95 +421,129 @@
                 <div class="service-card">
                     <div class="service-icon">💻</div>
                     <h3>Sites Institucionais</h3>
-                    <p>Sites profissionais para estabelecer sua presença online.</p>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">🚀</div>
                     <h3>Landing Pages</h3>
-                    <p>Páginas de alta conversão focadas em resultados.</p>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon">🛍️</div>
+                    <div class="service-icon">🛒</div>
                     <h3>E-commerce</h3>
                     <p>Lojas virtuais completas para vender pela internet.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Preços -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Planos e Preços</h2>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Landing Page</h3>
-                    <div class="price">R$997<span>/único</span></div>
-                    <ul class="features">
-                        <li>Design Profissional</li>
-                        <li>Página de Alta Conversão</li>
-                        <li>Otimização para Mobile</li>
-                        <li>Entrega em 7 dias</li>
-                    </ul>
-                    <a href="#contact" class="btn">Começar Agora</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Site Institucional</h3>
-                    <div class="price">R$1.997<span>/único</span></div>
-                    <ul class="features">
-                        <li>Até 5 Páginas</li>
-                        <li>Design Profissional</li>
-                        <li>Totalmente Responsivo</li>
-                        <li>Otimização para SEO</li>
-                        <li>Entrega em 15 dias</li>
-                    </ul>
-                    <a href="#contact" class="btn">Começar Agora</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>E-commerce</h3>
-                    <div class="price">R$3.997<span>/único</span></div>
-                    <ul class="features">
-                        <li>Loja Virtual Completa</li>
-                        <li>Até 50 Produtos</li>
-                        <li>Integração com Pagamentos</li>
-                        <li>Painel Administrativo</li>
-                        <li>Entrega em 30 dias</li>
-                    </ul>
-                    <a href="#contact" class="btn">Começar Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contato -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Entre em Contato</h2>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="E-mail">
-                    <input type="tel" placeholder="Telefone">
-                    <textarea placeholder="Mensagem"></textarea>
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
-            </div>
+        <div class="whatsapp-button">
+            <a href="https://wa.me/5569992518269" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp">
+            </a>
         </div>
-    </section>
+        
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="logo">Web<span>ED</span></div>
-            <p>Especialistas em criar sites e landing pages que convertem visitantes em clientes.</p>
-            <div class="footer-bottom">
-                <p>&copy; 2025 WebED Brasil. Todos os direitos reservados.</p>
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Planos e Preços</h2>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Landing Page</h3>
+                        <div class="price">R$997<span>/único</span></div>
+                        <ul class="features">
+                            <li>Design Profissional</li>
+                            <li>Página de Alta Conversão</li>
+                            <li>Otimização para Mobile</li>
+                            <li>Entrega em 7 dias</li>
+                        </ul>
+                        <a href="#contact" class="btn">Começar Agora</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Site Institucional</h3>
+                        <div class="price">R$1.300<span>/único</span></div>
+                        <ul class="features">
+                            <li>Até 5 Páginas</li>
+                            <li>Design Profissional</li>
+                            <li>Totalmente Responsivo</li>
+                            <li>Otimização para SEO</li>
+                            <li>Entrega em 15 dias</li>
+                        </ul>
+                        <a href="#contact" class="btn">Começar Agora</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>E-commerce</h3>
+                        <div class="price">R$2,500<span>/único</span></div>
+                        <ul class="features">
+                            <li>Loja Virtual Completa</li>
+                            <li>Até 50 Produtos</li>
+                            <li>Integração com Pagamentos</li>
+                            <li>Painel Administrativo</li>
+                            <li>Entrega em 30 dias</li>
+                        </ul>
+                        <a href="#contact" class="btn">Começar Agora</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossos Projetos</h2>
+                </div>
+                <div class="gallery-grid">
+                    <a href="https://baseedmilson.42web.io" target="_blank">
+                        <img src="004.png" alt="Trabalho 1">
+                    </a>
+                    <a href="https://lamarao123.github.io/casa-resgate-/" target="_blank">
+                        <img src="005.png" alt="Trabalho 2">
+                    </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Entre em Contato</h2>
+                </div>
+                <div class="contact-form">
+                    <form class="contact-form" action="https://formspree.io/f/mblodopv"method="POST">
+                        <div class="form-group">
+                          <label for="name">Nome</label>
+                          <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="message">Mensagem</label>
+                          <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <!-- Campo oculto para evitar spam (honeypot) -->
+                        <input type="text" name="_gotcha" style="display: none;">
+                
+                        <button type="submit" class="btn btn-primary contact-button">
+                          <!-- Ícone aqui --> Enviar Mensagem
+                        </button>
+                      </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="logo">Web<span>ED</span></div>
+                <p>Especialistas em criar sites e landing pages que convertem visitantes em clientes.</p>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 WebED Brasil. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
